@@ -1,6 +1,6 @@
-##Integrantes
--Lautaro Ouvrard
--Luca Lanfranqui
--Iñaqui Gopar
+# Integrantes
+- Lautaro Ouvrard.
+- Luca Lanfranqui.
+- Iñaki Gopar.
 
-#Fijarse de cargar los respectivos archivos csv al proyecto
+# Fijarse de cargar los respectivos archivos csv al proyecto
