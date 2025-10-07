@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <!-- aca va el nombre del PersistenceUnit /-->
+    <persistence-unit name="integrador2">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- aca van las entidades /-->
+        <class>ar.edu.unicen.entity.Carrera</class>
+        <class>ar.edu.unicen.entity.Estudiante</class>
+        <class>ar.edu.unicen.entity.EstudianteCarrera</class>
+
+        <properties>
+
+            <!-- Propiedades de configuracion de JDBC para MySQL -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/integrador2" />
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
+
+
+            <!-- Propiedad para la generacion automatica del esquema de base de datos -->
+            <!-- <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/> -->
+
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <!-- property name="hibernate.use_sql_comments" value="true"/-->
+
+        </properties>
+    </persistence-unit>
+
+
+</persistence>
