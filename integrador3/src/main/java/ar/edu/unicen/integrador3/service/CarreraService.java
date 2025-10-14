@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class CarreraService {
@@ -31,5 +33,9 @@ public CarreraResponseDTO update(CarreraResponseDTO request) {
     carreraRepository.save(carrera);
     return new CarreraResponseDTO(carrera.getId(), carrera.getNombre(), carrera.getDuracion());
 
+}
+public void delete(Long id) {
+    Carrera carrera = carreraRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("No se encontro la carrera con el id: " + id));
+    carreraRepository.delete(carrera);
 }
 }
