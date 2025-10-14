@@ -1,13 +1,12 @@
 package ar.edu.unicen.integrador3;
 
+import ar.edu.unicen.integrador3.utils.CargarDatos;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Integrador3Application {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Integrador3Application.class, args);
-    }
+    public static void main(String[] args) {SpringApplication.run(Integrador3Application.class, args);}
 
 }

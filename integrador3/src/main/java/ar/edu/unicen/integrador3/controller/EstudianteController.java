@@ -45,17 +45,17 @@ public class EstudianteController {
         return ResponseEntity.ok(estudianteService.findByDNI(dni));
     }
 
-    @GetMapping("s")
+    @GetMapping
     public ResponseEntity<List<EstudianteResponseDTO>> findAllOrderByName(){
         return ResponseEntity.ok(estudianteService.findAllOrderByName());
     }
 
-    @GetMapping
+    @GetMapping("/libreta")
     public ResponseEntity<EstudianteResponseDTO> findByLibreta(@RequestParam int libreta){
         return ResponseEntity.ok(estudianteService.findByLibreta(libreta));
     }
 
-    @GetMapping
+    @GetMapping("/genero")
     public ResponseEntity<List<EstudianteResponseDTO>> findAllEstudianteByGenero(@RequestParam String genero){
         return ResponseEntity.ok(estudianteService.findAllEstudianteByGenero(genero));
     }
