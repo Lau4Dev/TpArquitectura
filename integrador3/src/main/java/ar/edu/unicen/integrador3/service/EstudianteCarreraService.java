@@ -96,7 +96,7 @@ public class EstudianteCarreraService {
 
 
     public List<EstudianteResidenciaDTO> getAllEstudiantesCarreraByResidencia(Long idCarrera, String residencia) {
-        Carrera c =  carreraRepository.findById(idCarrera).orElseThrow(
+        carreraRepository.findById(idCarrera).orElseThrow(
                 ()-> new EntityNotFoundException("no se encontro la carrera con el id " +  idCarrera)
         );
         return estudianteCarreraRepository.findAllEstudiantesCarreraByResidencia(idCarrera, residencia);
