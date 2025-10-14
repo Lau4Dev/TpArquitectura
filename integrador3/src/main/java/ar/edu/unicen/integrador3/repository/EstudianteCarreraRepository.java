@@ -19,14 +19,14 @@ public interface EstudianteCarreraRepository extends JpaRepository<EstudianteCar
              "JOIN ec.carrera c " +
              "JOIN ec.estudiante e " +
              "WHERE c.id = :id_carrera AND e.ciudad = :residencia")
-    List<EstudianteResidenciaDTO> getAllEstudiantesCarreraByResidencia(Long id_carrera, String residencia);
+    List<EstudianteResidenciaDTO> findAllEstudiantesCarreraByResidencia(Long id_carrera, String residencia);
 
     @Query("SELECT new ar.edu.unicen.integrador3.dto.response.CarreraInscripcionDTO(c.id,c.nombre,COUNT(ec)) " +
             "FROM EstudianteCarrera ec " +
             "JOIN ec.carrera c "+
             "GROUP BY ec.carrera " +
             "ORDER BY COUNT(ec) DESC")
-    List<CarreraInscripcionDTO> getEstudiantesInscriptos();
+    List<CarreraInscripcionDTO> findEstudiantesInscriptos();
 
      @Query("SELECT new ar.edu.unicen.integrador3.dto.response.ReporteDTO(" +
              "c.nombre, " +
@@ -37,7 +37,7 @@ public interface EstudianteCarreraRepository extends JpaRepository<EstudianteCar
              "JOIN ec.carrera c " +
              "GROUP BY c.nombre, ec.inscripcion " +
              "ORDER BY c.nombre ASC, ec.inscripcion ASC")
-     List<ReporteDTO> getReportes();
+     List<ReporteDTO> findReportes();
 
 }
 
