@@ -1,4 +1,4 @@
-package ar.edu.unicen.integrador3.Controller;
+package ar.edu.unicen.integrador3.controller;
 
 import ar.edu.unicen.integrador3.dto.request.CarreraRequestDTO;
 import ar.edu.unicen.integrador3.dto.response.CarreraResponseDTO;
