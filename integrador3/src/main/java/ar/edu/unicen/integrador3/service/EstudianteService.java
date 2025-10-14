@@ -60,13 +60,23 @@ public class EstudianteService {
         estudianteRepository.delete(estudiante);
     }
 
+    public EstudianteResponseDTO findByDNI(Long dni) {
+        Estudiante estudiante = estudianteRepository.findById(dni)
+                .orElseThrow(() -> new RuntimeException("No se encontro el estudiante con el dni: " + dni));
+        return new EstudianteResponseDTO(estudiante.getDni(),
+                estudiante.getNombre() + " " + estudiante.getApellido(),
+                estudiante.getGenero(),
+                estudiante.getCiudad(),
+                estudiante.getNumeroLibreta());
+    }
+
     public List<EstudianteResponseDTO> findAllOrderByName() {
         List<EstudianteResponseDTO> estudiantes = estudianteRepository.findAllOrderByName();
         if (estudiantes.isEmpty()) throw new RuntimeException("No se encontraron estudiantes");
         return estudiantes;
     }
 
-    public EstudianteResponseDTO findByLibreta(String libreta) {
+    public EstudianteResponseDTO findByLibreta(int libreta) {
         EstudianteResponseDTO estudianteResponse = estudianteRepository.findByLibreta(libreta);
         if(estudianteResponse == null) throw new EntityNotFoundException("No se encontro el estudiante con la libreta: " + libreta);
         return estudianteResponse;
