@@ -7,6 +7,7 @@ import ar.edu.unicen.integrador3.dto.response.EstudianteCarreraResponseDTO;
 import ar.edu.unicen.integrador3.dto.response.EstudianteResidenciaDTO;
 import ar.edu.unicen.integrador3.dto.response.ReporteDTO;
 import ar.edu.unicen.integrador3.service.EstudianteCarreraService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class EstudianteCarreraController {
     private final EstudianteCarreraService estudianteCarreraService;
 
     @PostMapping
-    public ResponseEntity<EstudianteCarreraResponseDTO> create(@RequestBody EstudianteCarreraRequestDTO request) {
+    public ResponseEntity<EstudianteCarreraResponseDTO> create(@Valid @RequestBody EstudianteCarreraRequestDTO request) {
         EstudianteCarreraResponseDTO response =  estudianteCarreraService.create(request);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -34,7 +35,7 @@ public class EstudianteCarreraController {
 
     @PutMapping("/{id}")
     public ResponseEntity<EstudianteCarreraResponseDTO> update(@PathVariable Long id,
-                                                               @RequestBody EstudianteCarreraRequestDTO request) {
+                                                               @Valid @RequestBody EstudianteCarreraRequestDTO request) {
         EstudianteCarreraResponseDTO updatedEstudianteCarrera = estudianteCarreraService.updated(request);
         return ResponseEntity.ok(updatedEstudianteCarrera);
     }
@@ -45,7 +46,7 @@ public class EstudianteCarreraController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("buscar/carrera/{idCarrera}")
+    @GetMapping("/buscar/carrera/{idCarrera}")
     public ResponseEntity<List<EstudianteResidenciaDTO>> getAllEstudiantesCarreraByResidencia(@PathVariable Long idCarrera,
                                                                                              @RequestParam String residencia) {
         List<EstudianteResidenciaDTO> response = estudianteCarreraService
