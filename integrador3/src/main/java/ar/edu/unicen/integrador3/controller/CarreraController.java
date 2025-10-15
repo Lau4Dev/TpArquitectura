@@ -30,7 +30,7 @@ public class CarreraController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CarreraResponseDTO> update(@PathVariable Long id, @RequestBody CarreraRequestDTO request) {
+    public ResponseEntity<CarreraResponseDTO> update(@PathVariable Long id, @Valid @RequestBody CarreraRequestDTO request) {
         return ResponseEntity.ok(carreraService.update(request));
     }
 
