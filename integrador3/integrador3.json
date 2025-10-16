@@ -1,592 +1,512 @@
 {
-  "name": "integrador3",
-  "version": "1",
-  "items": [
+  "info": {
+    "name": "integrador3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
     {
-      "type": "folder",
       "name": "estudiante",
-      "filename": "estudiante",
-      "seq": 2,
-      "root": {
-        "request": {
-          "auth": {
-            "mode": "inherit"
-          }
-        },
-        "meta": {
-          "name": "estudiante",
-          "seq": 2
-        }
-      },
-      "items": [
+      "item": [
         {
-          "type": "http",
-          "name": "estudiantes",
-          "filename": "estudiantes.bru",
-          "seq": 1,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
+          "name": "findAllOrderByName",
+          "event": [],
           "request": {
-            "url": "http://localhost:8080/api/estudiante",
             "method": "GET",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
+            "header": [],
             "auth": {
-              "mode": "inherit"
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante"
+              ],
+              "query": [],
+              "variable": []
             }
           }
         },
         {
-          "type": "http",
-          "name": "estudianteByLibreta",
-          "filename": "estudianteByLibreta.bru",
-          "seq": 2,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudiante/libreta?libreta=78149",
-            "method": "GET",
-            "headers": [],
-            "params": [
-              {
-                "name": "libreta",
-                "value": "78149",
-                "type": "query",
-                "enabled": true
-              }
-            ],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
           "name": "estudiantePOST",
-          "filename": "estudiantePOST.bru",
-          "seq": 3,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
+          "event": [],
           "request": {
-            "url": "http://localhost:8080/api/estudiante",
             "method": "POST",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
+            "header": [],
             "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "estudianteByGenero",
-          "filename": "estudianteByGenero.bru",
-          "seq": 4,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudiante/genero?genero=",
-            "method": "GET",
-            "headers": [],
-            "params": [
-              {
-                "name": "genero",
-                "value": "",
-                "type": "query",
-                "enabled": true
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dni\": 43909013,\n  \"nombre\": \"Pepe\",\n  \"apellido\": \"Gonzales\",\n  \"edad\": 27,\n  \"genero\": \"Male\",\n  \"ciudad\": \"Tandil\",\n  \"numeroLibreta\": 111111\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
               }
-            ],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
             }
           }
         },
         {
-          "type": "http",
-          "name": "estudianteByDNI",
-          "filename": "estudianteByDNI.bru",
-          "seq": 5,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
+          "name": "findByLibreta",
+          "event": [],
           "request": {
-            "url": "http://localhost:8080/api/estudiante/",
             "method": "GET",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
+            "header": [],
             "auth": {
-              "mode": "inherit"
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante/buscarLibreta?libreta=10383",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante",
+                "buscarLibreta"
+              ],
+              "query": [
+                {
+                  "key": "libreta",
+                  "value": "10383"
+                }
+              ],
+              "variable": []
             }
           }
         },
         {
-          "type": "http",
+          "name": "findAllEstudianteByGenero",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante/buscarGenero?genero=Male",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante",
+                "buscarGenero"
+              ],
+              "query": [
+                {
+                  "key": "genero",
+                  "value": "Male"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "findByDNI",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante/84454135",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante",
+                "84454135"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
           "name": "estudiantePUT",
-          "filename": "estudiantePUT.bru",
-          "seq": 6,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
+          "event": [],
           "request": {
-            "url": "http://localhost:8080/api/estudiante/",
             "method": "PUT",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
+            "header": [],
             "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "estudianteDELETE",
-          "filename": "estudianteDELETE.bru",
-          "seq": 7,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudiante/",
-            "method": "DELETE",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
+              "type": "noauth"
             },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "folder",
-      "name": "carrera",
-      "filename": "carrera",
-      "seq": 2,
-      "root": {
-        "request": {
-          "auth": {
-            "mode": "inherit"
-          }
-        },
-        "meta": {
-          "name": "carrera",
-          "seq": 2
-        }
-      },
-      "items": [
-        {
-          "type": "http",
-          "name": "carreraPOST",
-          "filename": "carreraPOST.bru",
-          "seq": 1,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/carrera",
-            "method": "POST",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante/43909013",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante",
+                "43909013"
+              ],
+              "query": [],
+              "variable": []
             },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "carreraPUT",
-          "filename": "carreraPUT.bru",
-          "seq": 2,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/carrera/{{id}}",
-            "method": "PUT",
-            "headers": [],
-            "params": [],
             "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "carreraDELETE",
-          "filename": "carreraDELETE.bru",
-          "seq": 3,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/carrera/{{id}}",
-            "method": "DELETE",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "type": "folder",
-      "name": "estudianteCarrera",
-      "filename": "estudianteCarrera",
-      "seq": 3,
-      "root": {
-        "request": {
-          "auth": {
-            "mode": "inherit"
-          }
-        },
-        "meta": {
-          "name": "estudianteCarrera",
-          "seq": 3
-        }
-      },
-      "items": [
-        {
-          "type": "http",
-          "name": "estudianteCarrera",
-          "filename": "estudianteCarrera.bru",
-          "seq": 1,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudianteCarrera",
-            "method": "GET",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "estudianteCarreraPOST",
-          "filename": "estudianteCarreraPOST.bru",
-          "seq": 2,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudianteCarrera",
-            "method": "POST",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "estudianteCarreraByCarrera&&residencia",
-          "filename": "estudianteCarreraByCarrera&&residencia.bru",
-          "seq": 3,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudianteCarrera/buscar/carrera/{{idCarrera}}?residencia=",
-            "method": "GET",
-            "headers": [],
-            "params": [
-              {
-                "name": "residencia",
-                "value": "",
-                "type": "query",
-                "enabled": true
+              "mode": "raw",
+              "raw": "{ \n  \"nombre\": \"nombreModificado\",\n  \"apellido\": \"apellidoModificado\",\n  \"edad\": 25,\n  \"genero\": \"generoModificado\",\n  \"ciudad\": \"ciudadModificada\",\n  \"numeroLibreta\": 999999\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
               }
-            ],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
             }
           }
         },
         {
-          "type": "http",
-          "name": "estudiantesInscriptos",
-          "filename": "estudiantesInscriptos.bru",
-          "seq": 4,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
+          "name": "estudianteDELETE",
+          "event": [],
           "request": {
-            "url": "http://localhost:8080/api/estudianteCarrera/estudiantesInscriptos",
-            "method": "GET",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "estudianteCarreraPUT",
-          "filename": "estudianteCarreraPUT.bru",
-          "seq": 5,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudianteCarrera/{{id}}",
-            "method": "PUT",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
-            "auth": {
-              "mode": "inherit"
-            }
-          }
-        },
-        {
-          "type": "http",
-          "name": "estudianteCarreraDELETE",
-          "filename": "estudianteCarreraDELETE.bru",
-          "seq": 6,
-          "settings": {
-            "encodeUrl": true,
-            "timeout": 0
-          },
-          "tags": [],
-          "request": {
-            "url": "http://localhost:8080/api/estudianteCarrera/{{id}}",
             "method": "DELETE",
-            "headers": [],
-            "params": [],
-            "body": {
-              "mode": "none",
-              "formUrlEncoded": [],
-              "multipartForm": [],
-              "file": []
-            },
-            "script": {},
-            "vars": {},
-            "assertions": [],
-            "tests": "",
-            "docs": "",
+            "header": [],
             "auth": {
-              "mode": "inherit"
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudiante/43909013",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudiante",
+                "43909013"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "carrera",
+      "item": [
+        {
+          "name": "carreraPOST",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/carrera",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "carrera"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 16,\n  \"nombre\": \" Tecnicatura en LLMs\",\n  \"duracion\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "carreraPUT",
+          "event": [],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/carrera/13",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "carrera",
+                "13"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Periodismo Deportivo\",\n  \"duracion\": 4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "carreraDELETE",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/carrera/16",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "carrera",
+                "16"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "estudianteCarrera",
+      "item": [
+        {
+          "name": "findReportes",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudianteCarrera",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudianteCarrera"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "estudianteCarreraPOST",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudianteCarrera",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudianteCarrera"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 111,\n  \"dni\": 43909013,\n  \"idCarrera\": 1,\n  \"inscripcion\": 2023,\n  \"graduacion\": 0,\n  \"antiguedad\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "getAllEstudiantesCarreraByResidencia",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudianteCarrera/buscar/carrera/1?residencia=Rauch",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudianteCarrera",
+                "buscar",
+                "carrera",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "residencia",
+                  "value": "Rauch"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "findEstudiantesInscriptos",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudianteCarrera/inscriptos",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudianteCarrera",
+                "inscriptos"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "estudianteCarreraPUT",
+          "event": [],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudianteCarrera/17",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudianteCarrera",
+                "17"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dni\": 84076286,\n  \"idCarrera\": 1,\n  \"inscripcion\": 2022,\n  \"graduacion\": 2025,\n  \"antiguedad\": 4\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "estudianteCarreraDELETE",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "http://localhost:8080/api/estudianteCarrera/111",
+              "protocol": "http",
+              "host": [
+                "localhost:8080"
+              ],
+              "path": [
+                "api",
+                "estudianteCarrera",
+                "111"
+              ],
+              "query": [],
+              "variable": []
             }
           }
         }
       ]
     }
   ],
-  "environments": [],
-  "brunoConfig": {
-    "version": "1",
-    "name": "integrador3",
-    "type": "collection",
-    "ignore": [
-      "node_modules",
-      ".git"
-    ],
-    "size": 0,
-    "filesCount": 0
-  }
+  "variable": [
+    {
+      "key": "dni",
+      "value": "",
+      "type": "default"
+    }
+  ]
 }

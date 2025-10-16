@@ -1,6 +1,7 @@
 package ar.edu.unicen.integrador3.service;
 
 import ar.edu.unicen.integrador3.dto.request.EstudianteRequestDTO;
+import ar.edu.unicen.integrador3.dto.request.update.EstudianteRequestUpdateDTO;
 import ar.edu.unicen.integrador3.dto.response.EstudianteResponseDTO;
 import ar.edu.unicen.integrador3.entity.Estudiante;
 import ar.edu.unicen.integrador3.repository.EstudianteRepository;
@@ -17,7 +18,7 @@ public class EstudianteService {
     private final EstudianteRepository estudianteRepository;
 
     @Transactional
-    public EstudianteResponseDTO create(EstudianteRequestDTO request){
+    public EstudianteResponseDTO create(EstudianteRequestDTO request) {
         Estudiante estudiante = new Estudiante(
                 request.dni(),
                 request.nombre(),
@@ -36,9 +37,9 @@ public class EstudianteService {
     }
 
     @Transactional
-    public EstudianteResponseDTO update(EstudianteRequestDTO request) {
-        Estudiante estudiante = estudianteRepository.findById(request.dni())
-                .orElseThrow(() -> new RuntimeException("No se encontro el estudiante con el dni: " + request.dni()));
+    public EstudianteResponseDTO update(EstudianteRequestUpdateDTO request, Long dni) {
+        Estudiante estudiante = estudianteRepository.findById(dni)
+                .orElseThrow(() -> new RuntimeException("No se encontro el estudiante con el dni: " + dni));
 
         estudiante.setNombre(request.nombre());
         estudiante.setApellido(request.apellido());
@@ -47,7 +48,8 @@ public class EstudianteService {
         estudiante.setCiudad(request.ciudad());
         estudiante.setNumeroLibreta(request.numeroLibreta());
         estudianteRepository.save(estudiante);
-        return new EstudianteResponseDTO(request.dni(),
+        return new EstudianteResponseDTO(
+                dni,
                 request.nombre() + " " + request.apellido(),
                 request.genero(),
                 request.ciudad(),

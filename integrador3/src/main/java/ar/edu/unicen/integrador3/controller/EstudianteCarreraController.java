@@ -2,6 +2,7 @@ package ar.edu.unicen.integrador3.controller;
 
 
 import ar.edu.unicen.integrador3.dto.request.EstudianteCarreraRequestDTO;
+import ar.edu.unicen.integrador3.dto.request.update.EstudianteCarreraUpdateDTO;
 import ar.edu.unicen.integrador3.dto.response.CarreraInscripcionDTO;
 import ar.edu.unicen.integrador3.dto.response.EstudianteCarreraResponseDTO;
 import ar.edu.unicen.integrador3.dto.response.EstudianteResidenciaDTO;
@@ -35,8 +36,8 @@ public class EstudianteCarreraController {
 
     @PutMapping("/{id}")
     public ResponseEntity<EstudianteCarreraResponseDTO> update(@PathVariable Long id,
-                                                               @Valid @RequestBody EstudianteCarreraRequestDTO request) {
-        EstudianteCarreraResponseDTO updatedEstudianteCarrera = estudianteCarreraService.updated(request);
+                                                               @Valid @RequestBody EstudianteCarreraUpdateDTO request) {
+        EstudianteCarreraResponseDTO updatedEstudianteCarrera = estudianteCarreraService.updated(id, request);
         return ResponseEntity.ok(updatedEstudianteCarrera);
     }
 
@@ -55,7 +56,7 @@ public class EstudianteCarreraController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/estudiantesInscriptos")
+    @GetMapping("/inscriptos")
     public ResponseEntity<List<CarreraInscripcionDTO>> findEstudiantesInscriptos() {
         List<CarreraInscripcionDTO> response = estudianteCarreraService
                 .findEstudiantesInscriptos();

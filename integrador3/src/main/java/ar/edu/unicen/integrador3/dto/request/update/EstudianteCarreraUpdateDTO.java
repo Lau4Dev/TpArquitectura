@@ -1,10 +1,9 @@
-package ar.edu.unicen.integrador3.dto.request;
+package ar.edu.unicen.integrador3.dto.request.update;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
-public record EstudianteCarreraRequestDTO(
-        @NotNull Long id,
+public record EstudianteCarreraUpdateDTO(
         @NotNull Long dni,
         @NotNull Long idCarrera,
         @PositiveOrZero int inscripcion,

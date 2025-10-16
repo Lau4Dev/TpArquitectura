@@ -1,6 +1,7 @@
 package ar.edu.unicen.integrador3.service;
 
 import ar.edu.unicen.integrador3.dto.request.EstudianteCarreraRequestDTO;
+import ar.edu.unicen.integrador3.dto.request.update.EstudianteCarreraUpdateDTO;
 import ar.edu.unicen.integrador3.dto.response.CarreraInscripcionDTO;
 import ar.edu.unicen.integrador3.dto.response.EstudianteCarreraResponseDTO;
 import ar.edu.unicen.integrador3.dto.response.EstudianteResidenciaDTO;
@@ -56,10 +57,10 @@ public class EstudianteCarreraService {
     }
 
     @Transactional
-    public EstudianteCarreraResponseDTO updated(EstudianteCarreraRequestDTO request) {
+    public EstudianteCarreraResponseDTO updated( Long id, EstudianteCarreraUpdateDTO request) {
 
-        EstudianteCarrera ec = estudianteCarreraRepository.findById(request.id()).orElseThrow(
-                ()-> new EntityNotFoundException("EstudianteCarrera no encontrado con el id " +  request.id())
+        EstudianteCarrera ec = estudianteCarreraRepository.findById(id).orElseThrow(
+                ()-> new EntityNotFoundException("EstudianteCarrera no encontrado con el id " +  id)
         );
         Estudiante e = estudianteRepository.findById(request.dni()).orElseThrow(
                 ()-> new EntityNotFoundException("Estudiante no encontrado con el dni " +  request.dni())

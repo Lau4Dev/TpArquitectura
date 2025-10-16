@@ -1,6 +1,7 @@
 package ar.edu.unicen.integrador3.controller;
 
 import ar.edu.unicen.integrador3.dto.request.CarreraRequestDTO;
+import ar.edu.unicen.integrador3.dto.request.update.CarreraUpdateDTO;
 import ar.edu.unicen.integrador3.dto.response.CarreraResponseDTO;
 import ar.edu.unicen.integrador3.service.CarreraService;
 import jakarta.validation.Valid;
@@ -30,8 +31,8 @@ public class CarreraController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CarreraResponseDTO> update(@PathVariable Long id, @Valid @RequestBody CarreraRequestDTO request) {
-        return ResponseEntity.ok(carreraService.update(request));
+    public ResponseEntity<CarreraResponseDTO> update(@PathVariable Long id, @Valid @RequestBody CarreraUpdateDTO request) {
+        return ResponseEntity.ok(carreraService.update(id, request));
     }
 
     @DeleteMapping("/{id}")

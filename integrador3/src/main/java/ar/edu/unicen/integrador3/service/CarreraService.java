@@ -1,6 +1,7 @@
 package ar.edu.unicen.integrador3.service;
 
 import ar.edu.unicen.integrador3.dto.request.CarreraRequestDTO;
+import ar.edu.unicen.integrador3.dto.request.update.CarreraUpdateDTO;
 import ar.edu.unicen.integrador3.dto.response.CarreraInscripcionDTO;
 import ar.edu.unicen.integrador3.dto.response.CarreraResponseDTO;
 import ar.edu.unicen.integrador3.entity.Carrera;
@@ -30,9 +31,9 @@ public CarreraResponseDTO save(CarreraRequestDTO request) {
 }
 
 @Transactional
-public CarreraResponseDTO update(CarreraRequestDTO request) {
-    Carrera carrera = carreraRepository.findById(request.id())
-            .orElseThrow(() -> new EntityNotFoundException("No se encontro la carrera con el id: " + request.id()));
+public CarreraResponseDTO update( Long id, CarreraUpdateDTO request) {
+    Carrera carrera = carreraRepository.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("No se encontro la carrera con el id: " + id));
     carrera.setNombre(request.nombre());
     carrera.setDuracion(request.duracion());
     carreraRepository.save(carrera);
